@@ -61,11 +61,13 @@
             background-color: #61dafb;
             color: #282c34;
             font-size: 1rem;
-            padding: 10px 20px;
+            padding: 2px 4px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             margin: 5px;
+            font-size: 13px;
+            font-weight: 5px;
         }
 
         button:hover {
@@ -158,3 +160,82 @@
          border-radius: 50px;
          border: 1px solid #4E5BE7BF;
        }
+/* Blur effect */
+#mainContent.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* Modal styling */
+#deployModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+#deployModal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#deployInputSection {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#deployInputSection h3 {
+    margin-bottom: 10px;
+}
+
+#subdomainInput {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#confirmDeployButton, #cancelDeployButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#cancelDeployButton {
+    background-color: #6c757d;
+}
+
+#confirmDeployButton:hover {
+    background-color: #0056b3;
+}
+
+#cancelDeployButton:hover {
+    background-color: #5a6268;
+}

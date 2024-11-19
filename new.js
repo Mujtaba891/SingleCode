@@ -102,3 +102,74 @@ document.getElementById("exportButton").addEventListener("click", () => {
         a.click();
     });
 });
+
+document.getElementById("deployButton").addEventListener("click", () => {
+    const htmlCode = htmlEditor.getValue();
+    const cssCode = cssEditor.getValue();
+    const jsCode = jsEditor.getValue();
+
+    // Combine the code
+    const combinedCode = `
+        <html>
+            <head>
+                <style>${cssCode}</style>
+            </head>
+            <body>
+                ${htmlCode}
+                <script>${jsCode}</script>
+            </body>
+        </html>
+    `;
+
+    // Simulate subdomain creation (using a random identifier)
+    const subdomain = `user-${Math.floor(Math.random() * 100000)}.singlecodemd.vercel.app`;
+
+    // In a real-world scenario, you would send this combined code to a backend service that deploys it on Vercel.
+    alert(`Your project has been deployed to: https://${subdomain}`);
+    console.log("Deployed Code:", combinedCode);
+
+    // Optionally redirect or copy the link to clipboard
+    const deployLink = `https://${subdomain}`;
+    window.open(deployLink, "_blank"); // Open in a new tab
+});
+
+document.getElementById("deployButton").addEventListener("click", () => {
+    const deployInputSection = document.getElementById("deployInputSection");
+    deployInputSection.style.display = "block"; // Show the input section
+});
+
+document.getElementById("confirmDeployButton").addEventListener("click", () => {
+    const subdomainInput = document.getElementById("subdomainInput").value.trim();
+
+    if (!subdomainInput) {
+        alert("Please enter a valid website name!");
+        return;
+    }
+
+    // Combine the user's code
+    const htmlCode = htmlEditor.getValue();
+    const cssCode = cssEditor.getValue();
+    const jsCode = jsEditor.getValue();
+
+    const combinedCode = `
+        <html>
+            <head>
+                <style>${cssCode}</style>
+            </head>
+            <body>
+                ${htmlCode}
+                <script>${jsCode}</script>
+            </body>
+        </html>
+    `;
+
+    // Simulate deployment (in real-world, you'd send this code to a backend API)
+    const subdomain = `${subdomainInput.toLowerCase().replace(/[^a-z0-9-]/g, "")}.singlecodemd.vercel.app`;
+
+    alert(`Your project has been deployed to: https://${subdomain}`);
+    console.log("Deployed Code:", combinedCode);
+
+    // Optionally open the link
+    const deployLink = `https://${subdomain}`;
+    window.open(deployLink, "_blank"); // Open in a new tab
+});
