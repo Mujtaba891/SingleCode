@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> single code</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page 1: Code Editor -->
+    <div class="page active" id="editor-page">
+      <div class="head">
+         <img src="logo.jpg" alt="logo" width="70px">
+         <h3>single code</h3>
+        <button onclick="goToOutput()"><i class="fas fa-play">run</i></button>
+        <button id="exportButton"><i class="fas fa-file-archive">export</i></button>
+      </div>
+      <main>
+        <div class="container">
+          <div class="top-con">
+            <img src="html.png" alt="html.png" width="40px" height="40px">
+            <h4>HTML</h4>
+          </div>
+            <textarea id="htmlEditor" placeholder="Write your HTML code here..."></textarea>
+        </div>
+        <div class="container">
+        <div class="top-con">
+           <img src="css.png" alt="css.png" width="40px" height="40px">
+          <h4>CSS</h4>
+        </div>
+            <textarea id="cssEditor" placeholder="Write your CSS code here..."></textarea>
+        </div>
+        <div class="container">
+        <div class="top-con">
+          <img src="js.png" alt="js.png" width="40px" height="40px">
+          <h4>JavaScript</h4>
+        </div>
+            <textarea id="jsEditor" placeholder="Write your JavaScript code here..."></textarea>
+        </div>
+      </main>
+    </div>
+
+    <!-- Page 2: Output Viewer -->
+    <div class="page" id="output-page">
+      <div class="head">
+        <img src="logo.jpg" alt="logo" width="70px">
+        <h3>single code</h3>
+            <button onclick="openInBrowser()"><i class="fas fa-globe">browser</i></button>
+            <button onclick="goToEditor()"><i class="fas fa-arrow-left">back</i></button>
+      </div>
+      <main>
+        <div class="preview">
+          <h2>preview</h2>
+            <iframe id="output"></iframe>
+            <button onclick="toggleTerminal()"><i class="fas fa-terminal">console</i></button>
+            <div class="terminal" id="terminal"></div>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 <strong>single code</strong>. All Rights Reserved.</p>
+        <p>Organized by <strong><img src="logo1.png" alt="company logo" width="40px">MD colab</strong></p>
+        <div class="social-icons">
+          <a href="https://youtube.com/@team-kashmiri-hacker?si=Mr7rcpV8Y17UzFVT" target="_blank" class="fab fa-youtube">YouTube</a>
+         <!-- <a href="https://twitter.com" target="_blank" class="fab fa-twitter">Twitter</a> -->
+          <a href="https://www.instagram.com/mujtaba__alam/profilecard/?igsh=OHdqdXg4cGI2cDIw" target="_blank" class="fab fa-instagram">Instagram</a>
+          <a href="https://github.com/Mujtaba891" target="_blank" class="fab fa-github">GitHub</a>
+        </div>
+        <p>Designed by <a href="https://yourportfolio.com" target="_blank">Mujtaba Alam</a></p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/javascript/javascript.min.js"></script>
+    <script src="new.js">script.js</script>
+    
+</body>
+</html>
